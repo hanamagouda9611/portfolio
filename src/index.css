@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+:root {
+  --color-accent: #00ffff; /* Neon Cyan */
+  --color-bg-start: #0a0f1f;
+  --color-bg-mid: #101827;
+  --color-bg-end: #000000;
+}
+
+/* Global base styles */
+body {
+  background: radial-gradient(
+      circle at 20% 20%,
+      rgba(0, 255, 255, 0.1),
+      transparent 40%
+    ),
+    linear-gradient(
+      to bottom right,
+      var(--color-bg-start) 0%,
+      var(--color-bg-mid) 50%,
+      var(--color-bg-end) 100%
+    );
+  color: #f8fafc;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Add subtle glowing accents */
+.glass-card {
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 1.5rem;
+  box-shadow:
+    0 4px 30px rgba(0, 255, 255, 0.15),
+    inset 0 0 20px rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  box-shadow:
+    0 6px 40px rgba(0, 255, 255, 0.25),
+    inset 0 0 30px rgba(255, 255, 255, 0.08);
+  transform: translateY(-3px);
+}
+
+/* Accent utilities */
+.text-accent {
+  color: var(--color-accent);
+}
+
+.bg-accent {
+  background-color: var(--color-accent);
+}
+
+.border-accent {
+  border-color: var(--color-accent);
+}
